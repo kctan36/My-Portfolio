@@ -37,7 +37,7 @@ header, main, footer {
     padding: 0 20vmax;
 }
 
-a, h2 {
+a, h2, li {
     font-family: "Ubuntu";
 }
 
@@ -106,7 +106,8 @@ main {
     width: 100%;
     grid-template-areas: 
     "ab ab im"
-    "pr pr pr";
+    "pr pr pr"
+    "sk sk sk";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     padding-bottom: 4vmax;
@@ -115,10 +116,6 @@ main {
 
 .about {
     grid-area: ab;
-}
-
-.projects {
-    grid-area: pr;
 }
 
 section h2 + * {
@@ -148,6 +145,30 @@ section > *:last-child {
     background-position-x: center;
 }
 
+.projects {
+    grid-area: pr;
+}
+
+.projects li {
+    font-size: 1.25rem;
+}
+
+.projects div {
+    margin: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: 0.2rem solid var(--purple);
+}
+
+.projects figure {
+    margin: 0 0 1rem 0;
+    width: 100%;
+    height: 15rem;
+    overflow: scroll;
+}
+
+.projects img {
+    width: 100%;
+}
 
 footer {
     padding-top: 1rem;
@@ -209,9 +230,12 @@ footer .copyright {
         display: grid;
         grid-template-rows: 20rem auto;
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
         grid-template-areas: 
         "im"
-        "ab";
+        "ab"
+        "pr"
+        "sk";
     }
     .about {
         grid-area: ab;
@@ -223,6 +247,13 @@ footer .copyright {
     .container .image {
         background-image: url(../images/kyle-cropped-small.jpg);
         background-position: center;
+    }
+    .projects ul {
+        padding-left: 1.25rem;
+    }
+    .projects div {
+        margin: 1rem 0;
+        padding: 0 1.25rem;
     }
 }
 
