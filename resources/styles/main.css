@@ -37,7 +37,7 @@ header, main, footer {
     padding: 0 20vmax;
 }
 
-a, h2, li {
+a, h2, h3, li, address {
     font-family: "Ubuntu";
 }
 
@@ -196,6 +196,38 @@ section > *:last-child {
     border: 0.1rem solid var(--purple);
     font-size: 1rem;
     color: var(--purple);
+}
+
+.contact {
+    grid-area: 1 / 1 / 2 / 3; 
+}
+
+.contact .socials {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fb, .insta, .twitter  {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.fb {
+    background-image: url(../images/facebook.png);
+}
+
+.insta {
+    background-image: url(../images/instagram-small.png);
+}
+
+.twitter {
+    background-image: url(../images/twitter.png);
 }
 
 footer {
