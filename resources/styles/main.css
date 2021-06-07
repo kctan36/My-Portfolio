@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    color: rgb(109, 11, 155);
+}
+
+:root {
+    --purple: rgb(38, 0, 56);
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "hd hd hd"
+    "mn mn mn"
+    "ft ft ft";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto 20vmin;
+    color: var(--purple)
+}
+
+.menu {
+    background-image: url(../images/menu\ logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    height: 2rem;
+    width: 2.7rem;
+}
+
+header, main, footer {
+    padding: 0 20vmax;
+}
+
+a, h2 {
+    font-family: "Ubuntu";
+}
+
+p {
+    font-family: "Raleway";
+    line-height: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+}
+
+header {
+    grid-area: hd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 0.25rem solid var(--purple);
+    margin: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+header h2 {
+    font-family: "Pacifico";
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--purple);
+    margin: 0;
+}
+
+header nav {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+header nav a {
+    height: 3rem;
+    padding: 0 1rem;
+    color: var(--purple);
+}
+
+header nav a:hover {
+    color: white;
+    background-color: var(--purple);
+}
+
+a.active {
+    border: 0.1rem solid var(--purple);
+}
+
+a.active:hover {
+    color: var(--purple);
+    background-color: white;
+}
+
+main {
+    grid-area: mn;
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+    "ab ab im"
+    "pr pr pr";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    padding-bottom: 4vmax;
+    padding-top: 2vmax;
+}
+
+.about {
+    grid-area: ab;
+}
+
+.projects {
+    grid-area: pr;
+}
+
+section h2 + * {
+    padding-top: 1rem;
+    border-top: 1px double var(--purple);
+    border-width: 5px;
+}
+
+section > *:last-child {
+    padding-bottom: 1rem;
+    border-bottom: 1px double var(--purple);
+    border-width: 5px;
+}
+
+.container {
+    grid-area: im;
+    padding: 5vmax 2vmax 0 2vmax;
+}
+
+.container .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background-image: url(../images/kyle-cropped.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--purple);
+    color: white;
+    grid-area: ft;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer nav {
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+footer nav a {
+    color: white;
+    padding: 0.5rem;
+}
+
+footer a:hover {
+    text-decoration:  underline;
+    color:var(--purple);
+    background-color: white;
+}
+
+footer .copyright {
+    display: inline-flex;
+    align-items: flex-end;
+    height: auto;
+}
+
+@media only screen and (max-width: 1280px) {
+    header nav {
+        width: 70%;
+    }
+    header, main, footer {
+        padding-left: 15vmax;
+        padding-right: 15vmax;
+    }
+}
+@media only screen and (max-width: 900px) {
+    header nav {
+        display: none;
+    }
+    .menu {
+        display: inline-block;
+    }
+    body {
+        grid-template-rows: auto auto auto;
+    }
+    header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    main {
+        display: grid;
+        grid-template-rows: 20rem auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "im"
+        "ab";
+    }
+    .about {
+        grid-area: ab;
+    }
+    .container {
+        grid-area: im;
+        padding-top: 0;
+    }
+    .container .image {
+        background-image: url(../images/kyle-cropped-small.jpg);
+        background-position: center;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    header, main, footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    footer {
+        padding: 2rem;
+        flex-direction: column;
+    }
+    footer .copyright {
+        font-size: 1rem;
+    }
+}
