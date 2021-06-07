@@ -110,6 +110,7 @@ main {
     "sk sk sk";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
+    grid-auto-rows: auto;
     padding-bottom: 4vmax;
     padding-top: 2vmax;
 }
@@ -151,12 +152,24 @@ section > *:last-child {
 
 .projects li {
     font-size: 1.25rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.projects li:hover {
+    text-decoration: underline;
+}
+
+.projects ul > p {
+    margin-bottom: 0;
 }
 
 .projects div {
+    display: none;
     margin: 1rem;
     padding: 0.5rem 1.5rem;
     border: 0.2rem solid var(--purple);
+    transition: all 2s;
 }
 
 .projects figure {
@@ -170,8 +183,19 @@ section > *:last-child {
     width: 100%;
 }
 
+
 .skills {
     grid-area: sk;
+}
+
+.back {
+    margin-top: 2rem;
+    padding: 1rem;
+    grid-area: 4 / 1 / 5 / 4;
+    justify-self: center;
+    border: 0.1rem solid var(--purple);
+    font-size: 1rem;
+    color: var(--purple);
 }
 
 footer {
@@ -258,6 +282,10 @@ footer .copyright {
     .projects div {
         margin: 1rem 0;
         padding: 0 1.25rem;
+    }
+    .back {
+        grid-area: 5 / 1 / 6 / 2;
+        margin-top: 0.5rem;
     }
 }
 
